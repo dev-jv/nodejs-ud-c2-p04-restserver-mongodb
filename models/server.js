@@ -16,9 +16,30 @@ class Server {
     }
 
     routes() {
-        this.app.get('/tx', (req, res) => {
-            res.send('unsynchronized');
-        })
+        this.app.get('/api', (req, res) => {
+            // res.send('unsynchronized');
+            res.json({
+                msg: 'get API'
+            })
+        });
+
+        this.app.put('/api', (req, res) => {
+            res.json({
+                msg: 'put API'
+            })
+        });
+
+        this.app.post('/api', (req, res) => {
+            res.status(201).json({
+                msg: 'post API'
+            })
+        });
+
+        this.app.delete('/api', (req, res) => {
+            res.json({
+                msg: 'delete API'
+            })
+        });
     }
 
     listen() {
