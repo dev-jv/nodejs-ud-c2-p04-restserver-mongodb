@@ -1,12 +1,6 @@
-const colors = require('colors');
 require('dotenv').config();
-const express = require('express');
-const app = express();
+const Server = require('./models/server');
 
-app.get('/', function (req, res) {
-    res.send('look at me')
-});
+const server = new Server();
 
-app.listen(process.env.PORT, () => {
-    console.log(`Server running at ${process.env.PORT.blue} port`)
-});
+server.listen();
