@@ -4,12 +4,12 @@ const { Router } = require('express');
 
 const router = Router();
 
-router.get('/test', getUsers);
+router.get('/', getUsers);
 
 router.put('/test', putUsers);
 
 router.post('/test', postUsers);
 
-router.delete('/test', deleteUsers);
+router.delete('/:id', deleteUsers);
 
 module.exports = router;

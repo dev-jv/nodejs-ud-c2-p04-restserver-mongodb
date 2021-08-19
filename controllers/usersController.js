@@ -1,9 +1,16 @@
-const { response } = require('express');
+const { response, request } = require('express');
 
 const getUsers = (req, res) => {
     // res.send('unsynchronized');
+
+    // const query = req.query;
+
+    const { name='undefined' } = req.query;
+
     res.json({
-        msg: 'get API - cont'
+        msg: 'get API - cont',
+        // query
+        name
     })
 };
 
@@ -28,8 +35,13 @@ const postUsers = (req, res) => {
 };
 
 const deleteUsers = (req, res) => {
+
+    // const id = req.params.id;
+    const { id } = req.params;
+
     res.json({
-        msg: 'delete API'
+        msg: 'delete API',
+        id
     })
 };
 
